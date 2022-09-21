@@ -1,0 +1,66 @@
+<!-- This is the Chapter 3 Demo page    
+    More HTML for CPSC 314 -->
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participation 9-21</title>
+</head>
+
+<body>
+    <h1>Hello, new webpage, who is this?</h1>
+
+    <!-- no method attribute specified = GET -->
+    <form action="submission-demo.html">
+        <p>
+            <label for="first">First Name</label>
+            <input value="Default Value" type="text" id="fname" name="fname" placeholder="First name">
+        </p>
+        <p>
+            <label for="last">Last Name</label>
+            <input type="text" id="lname" name="lname" placeholder="Last name">
+        </p>
+
+        <p>
+            <label for="area">Tell me a story...</label>
+            <textarea id="area" rows="5" name="area">
+                placeholder="Enter multi line text here"
+            </textarea>
+        </p>
+        <p>
+            <label for="check">Check if awake</label>
+            <input type="checkbox" id="check" name="check">
+        </p>
+        <p>
+            <!-- radio buttons are grouped by "name" -->
+            <label for="rating">Pick a bubble</label>
+            <strong>0</strong>
+            <input type="radio" name="rating" id="rating" value="0">
+            <input type="radio" name="rating" id="rating" value="1">
+            <input type="radio" name="rating" id="rating" value="2">
+            <input type="radio" name="rating" id="rating" value="3">
+            <strong>3</strong>
+        </p>
+
+
+        <label for="agree">It was funny</label>
+        <select name="agree" id="agree">
+            <!-- size="3" multiple -->
+            <option value="yes">I agree</option>
+            <option value="maybe">I don't know</option>
+            <option value="no">I disagree</option>
+        </select>
+        <p>
+            <input type="button" name="" id="" value="This button will not submit">
+        </p>
+
+        <input type="submit" value="Submit Form">
+    </form>
+</body>
+
+</html>
