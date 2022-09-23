@@ -1,0 +1,8 @@
+li {
+    background-color: green;
+}
+
+#main-header:hover::after {
+    content: "BOO!";
+    background-color: brown;
+}
