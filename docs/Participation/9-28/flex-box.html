@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box Layout</title>
+    <style>
+        #container {
+            display: flex;
+        }
+
+        div {
+            line-height: 100px;
+        }
+
+        nav {
+            flex: 0 1 100%;
+            background-color: pink;
+        }
+
+        aside {
+            flex: 0 1 20%;
+            background-color: orange;
+        }
+
+        main {
+            flex: 0 1 80%;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <nav>Navigation Section</nav>
+    </div>
+    <div style="display: flex">
+        <aside>Introduction Section</aside>
+        <main>Stuff Here</main>
+    </div>
+</body>
+
+</html>
