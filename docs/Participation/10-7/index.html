@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participation 10-7</title>
+    <script>
+        window.onload = function () {
+            // main types, let is recomended for local variables
+            var myInt = 42;     // function level scope
+            let myOther = 900;  // block level scope
+            anotherInt = 800;   // avoid global scope object
+
+            const pi = 3.14159;
+            let myDouble;       // undefined 
+            let myarray = [5, "hello", 3.14];
+            let myBad = null;
+
+            console.log("console message");
+
+            // let response = prompt("Question question");
+            // alert("Answer: " + response);
+
+            // standard c++ arithmetic 
+            // standard logical operators && || 
+
+            let number = 2;
+            let myString = "2";
+
+            console.log(number + myString);
+            console.log(number + parseInt(myString));
+
+            // (===) identity - strict equality 
+            // same data type + same value
+            if (number === 2) {
+                // number === parseInt(myString); 
+                console.log("TRUE");
+            }
+
+            // truthy values ie if(variable)
+            // falsey values ie 0, "", NaN, undefined, null
+
+            // for (let index = 0; index < array.length(myString); index++) {
+            // }
+
+            // do {
+            // } 
+            // while (condition){
+            // }
+
+            function printConsole(message, number) {
+                console.log("The message is: " + message + "and some number is: " + number);
+                return 100;
+            }
+            printConsole("hi", 42);
+            printConsole(42, "hi"); // order change
+            let myResult = printConsole("hi", 42);
+            console.log(myResult);
+
+            // anonymous functions 
+            // arrow functions
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Javascript Demo 2</h1>
+    <p>
+        <img src="./giant-pumpkin.jpg" alt="Giant pumpkin">
+    </p>
+
+
+    <div>
+        <a href="../../index.html">Back to Index Page</a>
+    </div>
+</body>
+
+</html>
