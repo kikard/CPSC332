@@ -106,8 +106,30 @@
                     newDiv.id = "temp-div";
                     newDiv.style = "border: 2px solid red; padding: 10px; border-radius: 30px; margin: 15px;";
                     document.getElementById("container").appendChild(newDiv);
+
+                    // add content
+                    let newP = document.createElement("p");
+                    let date = new Date();
+                    // set content
+                    newP.textContent = `Hello world. I was created at ${date}`;
+                    // append to newDiv
+                    document.getElementById("temp-div").appendChild(newP);
                 }
             };
+            // only listens for click if the div is unchanged
+            document.getElementById("temp-div").addEventListener("click", () => {
+                alert("temp-div clicked");
+            });
+
+            // solution: add event listener to parent container (static element)
+            document.getElementById("container").addEventListener("click", function (e) {
+                if (e.target.id == "temp-div") {
+                    alert("dynamic temp-div clicked");
+                }
+                else {
+                    alert("not temp-div");
+                }
+            });
 
         }//end of onload function
     </script>
