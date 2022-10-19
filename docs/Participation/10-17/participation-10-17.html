@@ -104,8 +104,23 @@
                     context.stroke();
                     //close stroke path
                     context.closePath();
-                };
 
+                    // move
+                    // added animation
+                    animFrameId = window.requestAnimationFrame() => {
+                        ball2Coords[0] += xInc;
+                        if (ball2Coords[0] < 0 || ball2Coords[0] > canvas.width) {
+                            xInc *= -1;
+                        }
+
+                        ball2Coords[1] += yInc;
+                        if (ball2Coords[1] < 0 || ball2Coords[1] > canvas.height) {
+                            yInc *= -1;
+                        }
+
+                        ball2.move(ball2Coords[0], ball2Coords[1]);
+                    };
+                };
 
                 Ball.prototype.clear = function () {
                     cutCircle(context, this.position[0], this.position[1], this.radius + 10);
@@ -148,9 +163,13 @@
             // ball1.draw();
             // ball1.draw(true);
 
-            var ball2 = new Ball(25, "red", [85, 55]);
+            var ball2Coords = [85, 55];
+            var xInc = 3;
+            var yInc = 3;
+
+            var ball2 = new Ball(25, "red", ball2Coords);
             // ball2.setName("Red Ball 2");
-            // ball2.draw();
+            ball2.draw();
             // ball2.move(200, 155);
 
             // ball1.draw(); //would need to redraw the ball if we don't want it cut from overlap
@@ -186,17 +205,22 @@
             var animFrameId; //used like clearInterval except for animation: cancelAnimationFrame(animFrameId)
             var lastPosition = [0, 0];
 
-            canvas.addEventListener("mousemove", function (e) {
-                lastPosition = [e.clientX, e.clientY];
-                console.log("Event: " + e.clientX);
-                //on mouse move, request the animation frame is updated (redraw/paint the canvas)
-                animFrameId = window.requestAnimationFrame(createAtMouseMove);
-            });
+            // canvas.addEventListener("mousemove", function (e) {
+            //     lastPosition = [e.clientX, e.clientY];
+            //     console.log("Event: " + e.clientX);
+            //     //on mouse move, request the animation frame is updated (redraw/paint the canvas)
+            //     animFrameId = window.requestAnimationFrame(createAtMouseMove);
+            // });
 
             function createAtMouseMove() {
                 var xVal = lastPosition[0] - canvas.offsetLeft,
                     yVal = lastPosition[1] - canvas.offsetTop;
                 console.log(xVal, yVal);
+
+                canvas.addEventListener("mouseout", function (e) {
+                    window.cancelAnimationFrame(animFrameId);
+                });
+
 
                 //create a new ball
                 // let chosenColor = colors[Math.floor(Math.random() * colors.length)];
