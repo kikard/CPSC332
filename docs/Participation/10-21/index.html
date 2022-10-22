@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participation 10-21</title>
+</head>
+<style>
+    body {
+        background-color: burlywood;
+        border: 5px black solid;
+        margin: 5px;
+    }
+
+    a {
+        border: 2px red dotted;
+        color: blue;
+    }
+
+    fieldset {
+        padding: 5px;
+        border-style: green 5px solid;
+        margin: 5px;
+        background-color: rgb(190, 243, 225);
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label,
+    input,
+    button {
+        display: inline-block;
+    }
+</style>
+
+<script>
+    window.onload = function () {
+        // when clicked save to localStorage.setItem(string, value); 
+        let firstColor = document.getElementById("first");
+        let secondColor = document.getElementById("second");
+        let thirdColor = document.getElementById("third");
+        document.getElementById("firstbtn").addEventListener("click", function () {
+            if (firstColor == null) {
+                //error message
+                firstColor.innerHTML = "Fill out this form"
+            }
+            else {
+                localStorage.setItem("firstColor", firstColor.value);
+                firstColor.style.background - color = "green";
+            }
+
+        });
+        document.getElementById("secondbtn").addEventListener("click", function () {
+            localStorage.setItem("secondColor", secondColor.value);
+        });
+        document.getElementById("thirdbtn").addEventListener("click", function () {
+            localStorage.setItem("thirdColor", thirdColor.value);
+        });
+    }
+
+
+</script>
+
+<body>
+    <h2>Tell me your top three favorite dog colors</h2>
+
+    <fieldset <legend style="padding: 5px;"> CPSC 332 10/21 Participation </legend> >
+        <form action="submission.html" method="POST" style="padding: 5px; margin: 5px;">
+            <div>
+                <label for="btn">The favorite</label>
+                <input type="text" name="favorite" id="first" required>
+                <button id="firstbtn">Save Data</button>
+            </div>
+
+            <div>
+                <label for="btn">2nd favorite</label>
+                <input type="text" name="favorite" id="second" required>
+                <button id="secondbtn">Save Data</button>
+            </div>
+
+            <div>
+                <label for="btn">3rd favorite</label>
+                <input type="text" name="favorite" id="third" required>
+                <button id="thirdbtn">Save Data</button>
+            </div>
+
+            <div>
+                <input type="submit" value="Submit Response">
+            </div>
+
+        </form>
+    </fieldset>
+
+    <div>
+        <a href="../../index.html">Back to Index Page</a>
+    </div>
+
+</body>
+
+</html>

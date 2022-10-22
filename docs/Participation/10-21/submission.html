@@ -1,0 +1,81 @@
+<!-- Used submission-demo from 9-21 as starter code -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission</title>
+</head>
+<style>
+    table,
+    th {
+        border: 1px solid black;
+    }
+
+    td {
+        border: 1px dotted black;
+    }
+</style>
+
+<script>
+    /*
+        This script segment is intended to simulate a form
+        getting data from a form post on the referring page.
+        We are only doing this for now until we go over a 
+        web server implementation that contains a server side
+        presence.
+    */
+    window.onload = function () {
+        //(GET method) get your query string values by field
+        var firstColor = GetURLParameterValue("first");
+        var secondColor = GetURLParameterValue("second");
+        var thirdColor = GetURLParameterValue("third");
+        //populate desired HTML elements with desired values
+        //we pass in the id name of the HTML element we want
+        //to populate with the query string text
+        // (e.g., id="fname" is found on the HTML element we
+        // want to populate with text)
+        document.getElementById("first").textContent = firstColor;
+        document.getElementById("second").textContent = secondColor;
+        document.getElementById("third").textContent = thirdColor;
+    };
+
+    //Function retrieves the requested GET parameter value from
+    //the query string. Input is the field name for the 
+    //field-value pair in the query string,
+    //e.g., field=value -> first=bob
+    function GetURLParameterValue(searchParameter) {
+        var queryString = window.location.search.substring(1);
+        var URLFieldValues = queryString.split('&');
+        for (var i = 0; i < URLFieldValues.length; i++) {
+            var parameterValues = URLFieldValues[i].split('=');
+            if (parameterValues[0] == searchParameter) {
+                return parameterValues[1];
+            }
+        }
+    };
+</script>
+
+<body>
+
+    <h1>Submission Results Page</h1>
+    <table>
+        <caption>First and Last Name Submitted on the Previous Page</caption>
+        <tr>
+            <th>Top favorite</th>
+            <th>Second favorite</th>
+            <th>Third favorite</th>
+        </tr>
+        <tr>
+            <td id="first"></td>
+            <td id="second"></td>
+            <td id="third"></td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
