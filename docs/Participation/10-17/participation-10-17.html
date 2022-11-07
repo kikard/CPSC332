@@ -12,7 +12,7 @@
             margin: 0 auto;
         }
     </style>
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
     <script>
 
         var colors = ["red", "green", "blue", "yellow", "orange", "purple", "grey", "black", "white"];
@@ -107,7 +107,8 @@
 
                     // move
                     // added animation
-                    animFrameId = window.requestAnimationFrame() => {
+                    // animFrameId = window.requestAnimationFrame() {
+                    animFrameId = requestAnimationFrame() {
                         ball2Coords[0] += xInc;
                         if (ball2Coords[0] < 0 || ball2Coords[0] > canvas.width) {
                             xInc *= -1;
