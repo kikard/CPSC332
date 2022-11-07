@@ -1,0 +1,24 @@
+{
+  "name": "11-4-participation-kikard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GUWebDevelopment/11-4-participation-kikard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GUWebDevelopment/11-4-participation-kikard/issues"
+  },
+  "homepage": "https://github.com/GUWebDevelopment/11-4-participation-kikard#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "underscore": "^1.13.6"
+  }
+}
